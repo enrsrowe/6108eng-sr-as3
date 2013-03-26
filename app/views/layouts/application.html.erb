@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Oval Ski Club</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application", :media => "all" %>
+  <%= csrf_meta_tags %>
+  <%= yield :head %> <!-- brings in head from other templates -->
+</head>
+  <body>    
+    <!-- MAIN MENU -->
+    <div class="navbar navbar-fixed-top">            <!-- '-inverse' for a different coloured menu -->
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+
+          <!-- ../../ allows images and links to work across the site where as ../ did not work on th edit pages -->
+          <a class="brand" href="../../welcome/index.html" accesskey="H">
+            <img src="../../assets/logo.png" height="20px" width="130" alt="Oval Ski Club">
+          </a>
+
+          <div class="nav-collapse collapse">
+            <ul class="nav" style="margin-top: 0px;">
+              <li><a href="../../welcome/getstarted.html" accesskey="1">Get Started</a></li>
+              <li><a href="../../welcome/aboutus.html" accesskey="2">About Us</a></li>
+              <li><a href="../../welcome/whatson.html" accesskey="3">Whats on</a></li>
+              <li><a href="../../welcome/race.html" accesskey="4">Race</a></li>
+              <li><a href="../../welcome/gallery.html" accesskey="5">Gallery</a></li>
+              <li><a href="../../welcome/joinus.html" accesskey="6">Join Us</a></li>      
+            </ul>           
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+    <!-- END MAIN MENU -->
+
+    <div class="container">
+      <!-- Row of columns -->
+      <div class="row">        
+        <div class="span12">
+        	<%= yield %>
+        </div>
+      </div>
+
+      <hr>
+      <footer>
+        <div class="row">
+          <div class="span7">
+            <p>&copy; Oval Ski Club 2013 |  Made with 
+            <a target="_blank" href="http://getbootstrap.com">Bootstrap.</a> | Sam Rowell | <a href="access.html" accesskey="K"> Access Keys</a></p>
+
+            <!-- added for user name etc-->
+            <h6>
+              <% if logged_in? %>
+                <%= "Logged in as #{current_user.username}" %>
+                <%= link_to "(logout)", logout_path %>
+              <% else %>
+                <%= link_to "(login)", login_path %>
+              <% end %>
+            </h6>
+            <!--end username -->
+
+          </div>
+
+          <div class="pull-right">
+            <%= link_to image_tag('feed-icon-28x28.png'), articles_url(format: :atom)%>       
+            <a href="http://www.facebook.com/group.php?gid=2256597544" target="_blank" accesskey="G"> <img src="../../assets/facebook.png" height="30" width="30" alt="Facebook"/></a>
+            <a href="http://www.twitter.com" target="_blank" accesskey="T"> <img src="../../assets/twitter.png" height="30" width="30" alt="Twitter"/></a>
+            <a class="btn btn-mini"  href="#"><i class="icon-chevron-up"></i> To the top.</a>
+          </div>
+        </div>
+      </footer>
+
+    </div>     <!-- /container -->
+
+        <!-- The javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster 
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap-transition.js"></script>
+    <script src="assets/js/bootstrap-alert.js"></script>
+    <script src="assets/js/bootstrap-modal.js"></script>
+    <script src="assets/js/bootstrap-dropdown.js"></script>
+    <script src="assets/js/bootstrap-scrollspy.js"></script>
+    <script src="assets/js/bootstrap-tab.js"></script>
+    <script src="assets/js/bootstrap-tooltip.js"></script>
+    <script src="assets/js/bootstrap-popover.js"></script>
+    <script src="assets/js/bootstrap-button.js"></script>
+    <script src="assets/js/bootstrap-collapse.js"></script>
+    <script src="assets/js/bootstrap-carousel.js"></script>
+    <script src="assets/js/bootstrap-typeahead.js"></script> -->
+
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<%= form_for(@event) do |f| %>
+  <% if @event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+      <% @event.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field"  >
+    <%= f.label :title %><br />
+    <%= f.text_field :title, :class => 'span9' %> <!-- Uncommented textarea in scaffold.css as it forced 206px wide -->
+  </div>
+  <div class="field">
+    <%= f.label :body %><br />
+    <%= f.text_area :body, :class => 'span12' %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.text_field :date, :class => 'span12' %>
+  </div>
+  <div class="actions">
+    <%= f.submit :class => 'btn btn-success btn-large pull-right' %>
+  </div>
+<% end %>

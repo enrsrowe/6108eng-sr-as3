@@ -1,0 +1,26 @@
+<!-- Row of columns -->
+      <div class="row">
+        
+        <div class="span12">
+        <h1>Events</h1>
+
+          <% @events.each do |event| %>
+              <h3><%= event.title %></h3>
+              <b class="muted">
+                <i class="icon-calendar"></i>
+                <%= event.date %> 
+                <% if event.updated_at != event.created_at %>
+                  <span class="label label-success"><b>Updated: </b><%= event.updated_at.strftime("%d/%m/%Y - %I:%M %p") %></span>
+                <% else %>
+                  <span class="label"><b>Posted: </b><%= event.created_at.strftime("%d/%m/%Y") %></span>
+                <% end %>                
+              </b>
+
+              <p><%= event.body %></p>
+              <%= link_to raw('Read More &raquo;'), event, :class => 'btn btn-primary' %>
+              <hr>
+              <br>
+          <% end %>
+
+        </div>
+      </div>

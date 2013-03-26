@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<!-- Breadcrumbs -->
+<ul class="breadcrumb">
+  <li><%= link_to raw('Events'), events_path %><span class="divider">/</span></li>
+  <li class="active"><%= @event.title %></li>
+</ul>
+
+<!--Display Event -->
+<h2><%= @event.title %></h2>
+<b><%= @event.date %></b>
+<p><%= @event.body %></p>
+
+<!-- Show Created/Updated -->
+<span class="label"><b>Created: </b><%= @event.created_at.strftime("%d/%m/%Y - %I:%M %p") %></span> 
+<% if @event.updated_at != @event.created_at %>
+	<span class="label label-success"><b>Updated: </b><%= @event.updated_at.strftime("%d/%m/%Y - %I:%M %p") %></span>
+<% end %>
+
+<!-- Buttons -->
+<br><br>
+<%= link_to raw('&laquo; All Events'), events_path, :class => 'btn btn-primary' %>
+
+<%= link_to raw('<i class="icon-bullhorn icon-white"></i> Whats On'), '../welcome/whatson.html', :class => 'btn btn-primary' %>
+
+

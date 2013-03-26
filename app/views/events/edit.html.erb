@@ -1,0 +1,9 @@
+<h1>Editing event</h1>
+
+<%= render 'form' %>
+
+<!-- Buttons -->
+<%= link_to raw('&laquo; Back'), events_path, :class => 'btn btn-primary' %>
+<%= link_to raw('<i class="icon-eye-open icon-white"></i> Show'), @event, :class => 'btn btn-primary' %>
+<%= link_to raw('<i class="icon-trash icon-white"></i> Delete'), @event, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %>
+

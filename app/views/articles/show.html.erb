@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<!-- Breadcrumbs -->
+<ul class="breadcrumb">
+  <li><%= link_to raw('Articles'), articles_path %><span class="divider">/</span></li>
+  <li class="active"><%= @article.title %></li>
+</ul>
+
+<!--Display Article -->
+<h2><%= @article.title %></h2>
+<p>Tags: <%= tag_links(@article.tags) %></p> <!-- calls helper method -->
+<p><%= @article.body %></p>
+
+<!-- Display the image -->
+<% if @article.image.exists? %>
+  <%= image_tag @article.image.url(:medium) %><br />
+<% end %>
+
+<!-- Show Created/Updated -->
+<span class="label"><b>Created: </b><%= @article.created_at.strftime("%d/%m/%Y - %I:%M %p") %></span> 
+<% if @article.updated_at != @article.created_at %>
+	<span class="label label-success"><b>Updated: </b><%= @article.updated_at.strftime("%d/%m/%Y - %I:%M %p") %></span>
+<% end %>
+
+<!-- Make a comment -->
+<%= render partial: 'comments/form' %>
+
+<!-- Show Comments -->
+<h3>Comments (<%= @article.comments.size %>)</h3>
+<%= render partial: 'comment', collection: @article.comments %>
+
+<!-- Buttons -->
+<br><br>
+<%= link_to raw('&laquo; All Articles'), articles_path, :class => 'btn btn-primary' %>
+
+<!-- <%= link_to raw('<i class="icon-edit icon-white"></i> Edit'), edit_article_path(@article), :class => 'btn btn-inverse' %> -->
+
+<%= link_to raw('<i class="icon-home icon-white"></i> Home Page'), '../welcome/index.html', :class => 'btn btn-primary' %>
+
+
+
+
+
+

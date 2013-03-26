@@ -1,0 +1,41 @@
+<!-- content that will be displyed in the head -->
+<% content_for :head, auto_discovery_link_tag(:atom, 
+                                              articles_url(format: "atom")) %>
+
+<h1>Listing articles</h1>
+
+
+<% if logged_in? %>
+  <hr>
+  <!-- New Article button -->
+  <%= link_to raw('<i class="icon-pencil icon-white"></i> New Article'), new_article_path, :class => 'btn btn-success btn-large' %>
+<% end %>
+
+<!-- Display all Articles -->
+<% @articles.each do |article| %>
+  <hr>  
+  <h4><%= article.title %></h4>
+  <p><%= article.body %></p>
+
+<!-- Show Created/Updated -->
+  <span class="label"><b>Created: </b><%= article.created_at.strftime("%d/%m/%Y - %I:%M %p") %></span> 
+
+  <% if article.updated_at != article.created_at %>
+  	<span class="label label-success"><b>Updated: </b><%= article.updated_at.strftime("%d/%m/%Y - %I:%M %p") %></span>
+  <% end %>
+
+  <p></p>
+
+  <% if logged_in? %>
+    <!-- Display CRUD buttons -->
+    <div class="btn-group" data-toggle="buttons-checkbox">
+      <%= link_to raw('<i class="icon-eye-open icon-white"></i> Show'), article, :class => 'btn btn-primary' %>
+      <%= link_to raw('<i class="icon-edit icon-white"></i> Edit'), edit_article_path(article), :class => 'btn btn-inverse' %>
+      <%= link_to raw('<i class="icon-trash icon-white"></i> Delete'), article, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %>
+    </div> 
+  <% end %>
+
+  <br>
+<% end %>
+
+
