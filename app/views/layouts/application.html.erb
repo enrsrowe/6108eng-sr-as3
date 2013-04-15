@@ -33,6 +33,17 @@
               <li><a href="../../welcome/joinus.html" accesskey="6">Join Us</a></li>      
             </ul>           
           </div><!--/.nav-collapse -->
+
+          <!-- Facebook login -->
+          <div id="user_nav">
+            <% if current_user %>
+              Signed in as <strong><%= current_user.name %></strong>!
+              <%= link_to "Sign out", signout_path, id: "sign_out" %>
+            <% else %>
+              <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+            <% end %>
+          </div>
+
         </div>
       </div>
     </div>
@@ -56,7 +67,7 @@
             <!-- added for user name etc-->
             <h6>
               <% if logged_in? %>
-                <%= "Logged in as #{current_user.username}" %>
+               <%= "Logged in as #{current_user.username}" %>
                 <%= link_to "(logout)", logout_path %>
               <% else %>
                 <%= link_to "(login)", login_path %>

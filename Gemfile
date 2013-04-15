@@ -37,6 +37,10 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 
+#For file upload
 gem 'paperclip'
 
 gem 'sorcery'
+
+#For facebook login
+gem 'omniauth-facebook'
