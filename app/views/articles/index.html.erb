@@ -2,7 +2,7 @@
 <% content_for :head, auto_discovery_link_tag(:atom, 
                                               articles_url(format: "atom")) %>
 
-<h1>Listing articles</h1>
+<h1>Articles</h1>
 
 
 <% if logged_in? %>
@@ -36,6 +36,7 @@
   <% end %>
 
   <br>
+  <%= link_to "RSS Feed", articles_url(:rss) %>
 <% end %>
 
 
