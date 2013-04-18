@@ -3,11 +3,11 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def current_user
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
+  def active_user
+    @author ||= Author.find(session[:user_id]) if session[:user_id]
     #rescue ActiveRecord::RecordNotFound
   end
 
   #Moved down here...
-  helper_method :current_user
+  helper_method :active_user
 end

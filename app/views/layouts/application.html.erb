@@ -38,10 +38,10 @@
                   </ul>
                 <% else %>
               <!-- if logged in with facebook -->
-                <% if current_user %>
-                  Signed in as <strong><%= current_user.name %></strong>
+                <% if active_user %>
+                  Signed in as <strong><%= active_user.name %></strong>
                   <ul class="nav" style="margin-top: 0px;">
-                    <li><%= link_to raw('Logout'), signout_path %></li>
+                    <li><%= link_to raw('Logout'), signout_path, id: "sign_out" %></li>
                   </ul>
                 <% else %> 
               <!-- if not logged in -->

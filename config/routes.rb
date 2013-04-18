@@ -1,6 +1,11 @@
 Osc::Application.routes.draw do
   resources :statuses
 
+    #For Facebook login
+  match 'auth/:provider/callback', to: 'sessions#create'
+  match 'auth/failure', to: redirect('/')
+  match 'signout', to: 'sessons#destroy', as: 'signout'
+
 
   get "author_sessions/controller"
 
@@ -54,10 +59,7 @@ Osc::Application.routes.draw do
   match 'login' => 'author_sessions#new'
   match 'logout' => 'author_sessions#destroy'
 
-  #For Facebook login
-  match 'auth/:provider/callback', to: 'sessions#create'
-  match 'auth/failure', to: redirect('/')
-  match 'signout', to: 'sessons#destroy', as: 'signout'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
