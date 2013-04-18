@@ -3,11 +3,11 @@ class ApplicationController < ActionController::Base
 
   private
 
-    helper_method :current_user
-
-
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
-    rescue ActiveRecord::RecordNotFound
+    #rescue ActiveRecord::RecordNotFound
   end
+
+  #Moved down here...
+  helper_method :current_user
 end
