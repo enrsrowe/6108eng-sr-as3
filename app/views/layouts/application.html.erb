@@ -9,41 +9,51 @@
 </head>
   <body>    
     <!-- MAIN MENU -->
-    <div class="navbar navbar-fixed-top">            <!-- '-inverse' for a different coloured menu -->
-      <div class="navbar-inner">
+    <div class="navbar navbar-fixed-top" >            <!-- '-inverse' for a different coloured menu -->
+      <div class="navbar-inner" style="padding-left:70px; ">
         <div class="container">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
+          <div class="row">
 
           <!-- ../../ allows images and links to work across the site where as ../ did not work on th edit pages -->
-          <a class="brand" href="../../welcome/index.html" accesskey="H">
-            <img src="../../assets/logo.png" height="20px" width="130" alt="Oval Ski Club">
-          </a>
-
-          <div class="nav-collapse collapse">
-            <ul class="nav" style="margin-top: 0px;">
-              <li><a href="../../welcome/getstarted.html" accesskey="1">Get Started</a></li>
-              <li><a href="../../welcome/aboutus.html" accesskey="2">About Us</a></li>
-              <li><a href="../../welcome/whatson.html" accesskey="3">Whats on</a></li>
-              <li><a href="../../welcome/race.html" accesskey="4">Race</a></li>
-              <li><a href="../../welcome/gallery.html" accesskey="5">Gallery</a></li>
-              <li><a href="../../welcome/joinus.html" accesskey="6">Join Us</a></li>      
-            </ul>           
-          </div><!--/.nav-collapse -->
-
-          <!-- Facebook login -->
-          <div id="user_nav">
-            <% if current_user %>
-              Signed in as <strong><%= current_user.name %></strong>!
-              <%= link_to "Sign out", signout_path, id: "sign_out" %>
-            <% else %>
-              <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
-            <% end %>
+          <div ID="logo" Class="span2">
+            <a class="brand" href="../../welcome/index.html" accesskey="H">
+            <img src="../../assets/logo.png" height="20px" width="130" alt="Oval Ski Club"></a>
           </div>
-
+          <div class="span8">
+              <ul class="nav" style="margin-top: 0px;">
+                <li><a href="../../welcome/getstarted.html" accesskey="1">Get Started</a></li>
+                <li><a href="../../welcome/aboutus.html" accesskey="2">About Us</a></li>
+                <li><a href="../../welcome/whatson.html" accesskey="3">Whats on</a></li>
+                <li><a href="../../welcome/race.html" accesskey="4">Race</a></li>
+                <li><a href="../../welcome/gallery.html" accesskey="5">Gallery</a></li>
+                <li><a href="../../welcome/joinus.html" accesskey="6">Join Us</a></li>      
+              </ul>  
+            </div>
+            <!-- Login -->
+            <div class="span2 pull-right">
+              <!-- if logged in standard -->
+                <% if logged_in? %>
+                  <ul class="nav" style="margin-top: 0px;">
+                    <li><%= link_to raw('Logout'), logout_path %></li>
+                  </ul>
+                <% else %>
+              <!-- if logged in with facebook -->
+                <% if current_user %>
+                  Signed in as <strong><%= current_user.name %></strong>
+                  <ul class="nav" style="margin-top: 0px;">
+                    <li><%= link_to raw('Logout'), signout_path %></li>
+                  </ul>
+                <% else %> 
+              <!-- if not logged in -->
+                  <ul class="nav" style="margin-top: 0px;">
+                    <li><%= link_to raw('Login'), login_path %></li>
+                  </ul>
+                <% end %>                
+              <% end %>
+            </div>
+            
+            <!--end Login -->         
+          </div><!--/.nav-collapse -->
         </div>
       </div>
     </div>
@@ -61,20 +71,7 @@
       <footer>
         <div class="row">
           <div class="span7">
-            <p>&copy; Oval Ski Club 2013 |  Made with 
-            <a target="_blank" href="http://getbootstrap.com">Bootstrap.</a> | Sam Rowell | <a href="access.html" accesskey="K"> Access Keys</a></p>
-
-            <!-- added for user name etc-->
-            <h6>
-              <% if logged_in? %>
-               <%= "Logged in as #{current_user.username}" %>
-                <%= link_to "(logout)", logout_path %>
-              <% else %>
-                <%= link_to "(login)", login_path %>
-              <% end %>
-            </h6>
-            <!--end username -->
-
+            <p>&copy; Oval Ski Club 2013 |  <a href="access.html" accesskey="K"> Access Keys</a></p>
           </div>
 
           <div class="pull-right">
@@ -84,6 +81,10 @@
             <a class="btn btn-mini"  href="#"><i class="icon-chevron-up"></i> To the top.</a>
           </div>
         </div>
+
+        <!-- To the top! -->
+        <div id="toTop" ><i class="icon-chevron-up"></i></div>
+
       </footer>
 
     </div>     <!-- /container -->

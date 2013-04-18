@@ -31,11 +31,11 @@
 <!-- Row of columns -->
       <div class="row">
         
-        <div class="span12">
-        <h1>Latest News</h1>
+        <div class="span7">
+        <h3>Latest News</h3>
 
         	<% @articles.each do |article| %>
-					    <h3><%= article.title %></h3>
+					    <h4><%= article.title %></h4>
               <p><%= article.body %></p>
 
               <% if article.updated_at != article.created_at %>
@@ -48,6 +48,8 @@
               <hr>
               <br>
 					<% end %>
-
+        </div>
+        <div class="span5">
+          <h3>Weather</h3>
         </div>
       </div>

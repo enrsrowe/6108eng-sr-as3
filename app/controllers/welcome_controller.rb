@@ -1,6 +1,9 @@
 class WelcomeController < ApplicationController
 
   def index
+    #get the weather
+    #@weather_lookup = WeatherLookup.new
+
     @articles = Article.all.reverse #Reverses post order for newest at top.
     respond_to do |format|
       format.html # index.html.erb

@@ -44,3 +44,7 @@ gem 'sorcery'
 
 #For facebook login
 gem 'omniauth-facebook'
+
+#For Weateher
+#gem 'rb_wunderground'
+#gem 'httparty'

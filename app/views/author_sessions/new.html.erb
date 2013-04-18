@@ -1,3 +1,14 @@
+<!-- Facebook -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=122136647980674";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<!-- End facebook -->
+
 <h1>Login</h1>
  
 <%= form_tag author_sessions_path, method: :post do %>
@@ -14,5 +25,15 @@
   <div class="actions">
     <%= submit_tag "Login" %>
   </div>
+
+  <br>
+
+  <!-- Login with Facebook -->
+  <div>
+    <button class="btn"><%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %></button> 
+  </div>
+
+  <div class="fb-login-button" data-show-faces="true" data-width="200" data-max-rows="2"></div>
+
 <% end %>
 <%= link_to 'Back', articles_path %>
