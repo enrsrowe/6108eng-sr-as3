@@ -14,6 +14,7 @@ class Article < ActiveRecord::Base
       comments.map(&:body)
     end
     time :updated_at
+    string :publish_month
   end
 
   def publish_month

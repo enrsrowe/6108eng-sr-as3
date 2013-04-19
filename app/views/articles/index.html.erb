@@ -18,6 +18,23 @@
   <%= link_to raw('<i class="icon-pencil icon-white"></i> New Article'), new_article_path, :class => 'btn btn-success btn-large' %>
 <% end %>
 
+<!-- Display facets -->
+<div id="facets">
+  <h5>Published</h3>
+    <ul>
+      <% for row in @search.facet(:publish_month).rows %>
+      <li>
+        <% if params[:month].blank? %>
+          <%= link_to row.value, :month => row.value %> (<%= row.count %>)
+        <% else %>
+          <strong><%= row.value %></strong> (<%= link_to "remove", :month => nil %>)
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+ <!-- End facets -->
+
 <!-- Display all Articles -->
 <% @articles.each do |article| %>
   <hr>  
@@ -40,10 +57,14 @@
       <%= link_to raw('<i class="icon-edit icon-white"></i> Edit'), edit_article_path(article), :class => 'btn btn-inverse' %>
       <%= link_to raw('<i class="icon-trash icon-white"></i> Delete'), article, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %>
     </div> 
+   <% else %>
+    <%= link_to raw('Read Entire Article »'), article, :class => 'btn btn-small btn-primary pull-right' %> 
   <% end %>
 
   <br>
-  <%= link_to "RSS Feed", articles_url(:rss) %>
+  
 <% end %>
+
+<%= link_to "RSS Feed", articles_url(:rss) %>
 
 
