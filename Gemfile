@@ -48,3 +48,7 @@ gem 'omniauth-facebook'
 #For Weateher
 #gem 'rb_wunderground'
 #gem 'httparty'
+
+#Sunspot For Searching
+gem 'sunspot_rails'
+gem 'sunspot_solr' # optional pre-packaged Solr distribution for use in development

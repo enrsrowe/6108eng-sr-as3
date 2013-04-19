@@ -3,7 +3,16 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all.reverse #Allows articles to be displayed newest first.
+    #Added for sunspot search 
+    @search = Article.search do
+      fulltext params[:search]
+      with(:updated_at).less_than(Time.zone.now) #Stops future articles being displayed.
+    end
+    @articles = @search.results.reverse #sunspot display articles
+    #end sunspot search
+
+    
+    #@articles = Article.all.reverse #Allows articles to be displayed newest first.
   end
 
   # GET /articles/1

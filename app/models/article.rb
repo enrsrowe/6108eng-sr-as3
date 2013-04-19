@@ -1,11 +1,25 @@
 class Article < ActiveRecord::Base
-  attr_accessible :body, :title, :tag_list, :image
+  attr_accessible :body, :title, :tag_list, :image, :updated_at
   has_many :comments
   has_many :taggings
   has_many :tags, through: :taggings
   #has_attached_file :image #for paperclip images.
   has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }
   # > will maintain the aspect ratio.
+
+  searchable do
+    text :title, :boost => 5 #Things found in title are 5 times more important. 
+    text :body, :tag_list, :publish_month
+    text :comments do
+      comments.map(&:body)
+    end
+    time :updated_at
+  end
+
+  def publish_month
+    updated_at.strftime("%B %Y")
+  end
+
 
   def tag_list
   	#return self.tags.join(", ")

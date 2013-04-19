@@ -4,6 +4,13 @@
 
 <h1>Articles</h1>
 
+<!-- search function -->
+<%= form_tag articles_path, :method => :get do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+<% end %>
+<!-- search function -->
 
 <% if logged_in? %>
   <hr>
