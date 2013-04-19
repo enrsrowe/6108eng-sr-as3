@@ -1,36 +1,63 @@
-<h1>Events</h1>
-<hr>
+<h2>Events</h2>
 
-<% if logged_in? %>
-  <!-- New Event button -->    
-  <%= link_to raw('<i class="icon-pencil icon-white"></i> New Event'), new_event_path, :class => 'btn btn-success btn-large' %>
-<% end %>
+<div class="row">
+  <!-- Main Content -->
+  <div class="span8">
 
-<!-- Display all Events -->
-<% @events.each do |event| %>
-  <hr>
-  <h4><%= event.title %></h4>
-  <b><%= event.date %></b>
-  <p><%= event.body %></p>
+      <!-- Display all Events -->
+      <% @events.each do |event| %>
+        <hr>
+        <h4><%= event.title %></h4>
+        <b><%= event.date %></b>
+        <p><%= event.body %></p>
 
-<!-- Show Created/Updated -->
-	<span class="label"><b>Created: </b><%= event.created_at.strftime("%d/%m/%Y - %I:%M %p") %></span> 
+      <!-- Show Created/Updated -->
+        <span class="label"><b>Created: </b><%= event.created_at.strftime("%d/%m/%Y - %I:%M %p") %></span> 
 
-  <% if event.updated_at != event.created_at %>
-  	<span class="label label-success"><b>Updated: </b><%= event.updated_at.strftime("%d/%m/%Y - %I:%M %p") %></span>
-  <% end %>
+        <% if event.updated_at != event.created_at %>
+          <span class="label label-success"><b>Updated: </b><%= event.updated_at.strftime("%d/%m/%Y - %I:%M %p") %></span>
+        <% end %>
 
-  <p></p>  
+        <p></p>  
 
-  <% if logged_in? %>
-  <!-- Display CRUD buttons -->
-    <div class="btn-group" data-toggle="buttons-checkbox">
-      <%= link_to raw('<i class="icon-eye-open icon-white"></i> Show'), event, :class => 'btn btn-primary' %>
-      <%= link_to raw('<i class="icon-edit icon-white"></i> Edit'), edit_event_path(event), :class => 'btn btn-inverse' %>
-      <%= link_to raw('<i class="icon-trash icon-white"></i> Delete'), event, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %>
-    </div>
-  <% end %>
-  <br>   
-<% end %>
+        <% if logged_in? %>
+        <!-- Display CRUD buttons -->
+          <div class="btn-group" data-toggle="buttons-checkbox">
+            <%= link_to raw('<i class="icon-eye-open icon-white"></i> Show'), event, :class => 'btn btn-primary' %>
+            <%= link_to raw('<i class="icon-edit icon-white"></i> Edit'), edit_event_path(event), :class => 'btn btn-inverse' %>
+            <%= link_to raw('<i class="icon-trash icon-white"></i> Delete'), event, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %>
+          </div>
+        <% end %>
+        <br>   
+      <% end %>    
+  </div>
+
+
+  <!-- Side Bar -->
+  <div class="offset1 span3">
+      
+      <!-- New Event button -->  
+      <% if logged_in? %>          
+        <%= link_to raw('<i class="icon-pencil icon-white"></i> New Event'), new_event_path, :style =>'width:100%;', :class => 'btn btn-success btn-large' %>
+      <% else %>
+        <p>Welcome to the events page. This is where you can find all the latest and greatest racing, social and training events.</p>
+      <% end %>
+      <hr>
+
+      <!-- search function -->
+
+      <!-- Display facets -->
+
+      <hr>
+      <!-- RSS Feeds -->
+      <h4>RSS Feeds</h4>
+      <ul>
+        <li>XML</li>
+        <li>ATOM</li>
+        <li>JSON</li>
+      </ul>
+      <hr>
+  </div>
+</div>
 
 

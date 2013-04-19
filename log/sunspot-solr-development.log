@@ -1885,3 +1885,49 @@ Apr 19, 2013 6:58:11 PM org.apache.solr.core.SolrCore execute
 INFO: [] webapp=/solr path=/select params={facet=true&start=0&q=*:*&f.publish_month_s.facet.mincount=1&facet.field=publish_month_s&wt=ruby&fq=type:Article&fq=updated_at_d:{*+TO+2013\-04\-19T17\:58\:11Z}&rows=30} hits=4 status=0 QTime=1 
 Apr 19, 2013 6:58:13 PM org.apache.solr.core.SolrCore execute
 INFO: [] webapp=/solr path=/select params={facet=true&start=0&q=*:*&f.publish_month_s.facet.mincount=1&facet.field=publish_month_s&wt=ruby&fq=type:Article&fq=updated_at_d:{*+TO+2013\-04\-19T17\:58\:13Z}&rows=30} hits=4 status=0 QTime=1 
+Apr 19, 2013 6:59:48 PM org.apache.solr.core.SolrCore execute
+INFO: [] webapp=/solr path=/select params={facet=true&start=0&q=*:*&f.publish_month_s.facet.mincount=1&facet.field=publish_month_s&wt=ruby&fq=type:Article&fq=updated_at_d:{*+TO+2013\-04\-19T17\:59\:48Z}&rows=30} hits=4 status=0 QTime=1 
+Apr 19, 2013 6:59:50 PM org.apache.solr.core.SolrCore execute
+INFO: [] webapp=/solr path=/select params={facet=true&start=0&q=*:*&f.publish_month_s.facet.mincount=1&facet.field=publish_month_s&wt=ruby&fq=type:Article&fq=updated_at_d:{*+TO+2013\-04\-19T17\:59\:50Z}&rows=30} hits=4 status=0 QTime=1 
+Apr 19, 2013 6:59:52 PM org.apache.solr.core.SolrCore execute
+INFO: [] webapp=/solr path=/select params={facet=true&start=0&q=*:*&f.publish_month_s.facet.mincount=1&facet.field=publish_month_s&wt=ruby&fq=type:Article&fq=updated_at_d:{*+TO+2013\-04\-19T17\:59\:52Z}&rows=30} hits=4 status=0 QTime=1 
+Apr 19, 2013 7:08:31 PM org.apache.solr.core.SolrCore execute
+INFO: [] webapp=/solr path=/select params={facet=true&start=0&q=*:*&f.publish_month_s.facet.mincount=1&facet.field=publish_month_s&wt=ruby&fq=type:Article&fq=updated_at_d:{*+TO+2013\-04\-19T18\:08\:31Z}&rows=30} hits=4 status=0 QTime=1 
+Apr 19, 2013 7:08:34 PM org.apache.solr.core.SolrCore execute
+INFO: [] webapp=/solr path=/select params={facet=true&start=0&q=*:*&f.publish_month_s.facet.mincount=1&facet.field=publish_month_s&wt=ruby&fq=type:Article&fq=updated_at_d:{*+TO+2013\-04\-19T18\:08\:34Z}&rows=30} hits=4 status=0 QTime=1 
+Apr 19, 2013 7:08:36 PM org.apache.solr.core.SolrCore execute
+INFO: [] webapp=/solr path=/select params={facet=true&start=0&q=*:*&f.publish_month_s.facet.mincount=1&facet.field=publish_month_s&wt=ruby&fq=type:Article&fq=updated_at_d:{*+TO+2013\-04\-19T18\:08\:36Z}&rows=30} hits=4 status=0 QTime=1 
+Apr 19, 2013 7:08:38 PM org.apache.solr.core.SolrCore execute
+INFO: [] webapp=/solr path=/select params={facet=true&start=0&q=*:*&f.publish_month_s.facet.mincount=1&facet.field=publish_month_s&wt=ruby&fq=type:Article&fq=updated_at_d:{*+TO+2013\-04\-19T18\:08\:38Z}&rows=30} hits=4 status=0 QTime=1 
+Apr 19, 2013 7:08:40 PM org.apache.solr.core.SolrCore execute
+INFO: [] webapp=/solr path=/select params={facet=true&start=0&q=*:*&f.publish_month_s.facet.mincount=1&facet.field=publish_month_s&wt=ruby&fq=type:Article&fq=updated_at_d:{*+TO+2013\-04\-19T18\:08\:40Z}&rows=30} hits=4 status=0 QTime=1 
+Apr 19, 2013 7:09:35 PM org.apache.solr.core.SolrCore execute
+INFO: [] webapp=/solr path=/select params={facet=true&start=0&q=*:*&f.publish_month_s.facet.mincount=1&facet.field=publish_month_s&wt=ruby&fq=type:Article&fq=updated_at_d:{*+TO+2013\-04\-19T18\:09\:35Z}&rows=30} hits=4 status=0 QTime=1 
+Apr 19, 2013 7:09:37 PM org.apache.solr.core.SolrCore execute
+INFO: [] webapp=/solr path=/select params={facet=true&start=0&q=*:*&f.publish_month_s.facet.mincount=1&facet.field=publish_month_s&wt=ruby&fq=type:Article&fq=updated_at_d:{*+TO+2013\-04\-19T18\:09\:37Z}&rows=30} hits=4 status=0 QTime=1 
+Apr 19, 2013 7:09:38 PM org.apache.solr.core.SolrCore execute
+INFO: [] webapp=/solr path=/select params={facet=true&start=0&q=*:*&f.publish_month_s.facet.mincount=1&facet.field=publish_month_s&wt=ruby&fq=type:Article&fq=updated_at_d:{*+TO+2013\-04\-19T18\:09\:38Z}&rows=30} hits=4 status=0 QTime=1 
+Apr 19, 2013 7:09:55 PM org.apache.solr.core.SolrCore execute
+INFO: [] webapp=/solr path=/select params={facet=true&start=0&q=*:*&f.publish_month_s.facet.mincount=1&facet.field=publish_month_s&wt=ruby&fq=type:Article&fq=updated_at_d:{*+TO+2013\-04\-19T18\:09\:55Z}&rows=30} hits=4 status=0 QTime=1 
+Apr 19, 2013 7:10:06 PM org.apache.solr.core.SolrCore execute
+INFO: [] webapp=/solr path=/select params={facet=true&start=0&q=*:*&f.publish_month_s.facet.mincount=1&facet.field=publish_month_s&wt=ruby&fq=type:Article&fq=updated_at_d:{*+TO+2013\-04\-19T18\:10\:06Z}&rows=30} hits=4 status=0 QTime=1 
+Apr 19, 2013 7:10:09 PM org.apache.solr.core.SolrCore execute
+INFO: [] webapp=/solr path=/select params={facet=true&start=0&q=*:*&f.publish_month_s.facet.mincount=1&facet.field=publish_month_s&wt=ruby&fq=type:Article&fq=updated_at_d:{*+TO+2013\-04\-19T18\:10\:09Z}&rows=30} hits=4 status=0 QTime=1 
+Apr 19, 2013 7:10:34 PM org.apache.solr.core.SolrCore execute
+INFO: [] webapp=/solr path=/select params={facet=true&start=0&q=*:*&f.publish_month_s.facet.mincount=1&facet.field=publish_month_s&wt=ruby&fq=type:Article&fq=updated_at_d:{*+TO+2013\-04\-19T18\:10\:34Z}&rows=30} hits=4 status=0 QTime=1 
+Apr 19, 2013 7:10:40 PM org.apache.solr.core.SolrCore execute
+INFO: [] webapp=/solr path=/select params={facet=true&start=0&q=*:*&f.publish_month_s.facet.mincount=1&facet.field=publish_month_s&wt=ruby&fq=type:Article&fq=updated_at_d:{*+TO+2013\-04\-19T18\:10\:40Z}&rows=30} hits=4 status=0 QTime=1 
+Apr 19, 2013 7:10:42 PM org.apache.solr.core.SolrCore execute
+INFO: [] webapp=/solr path=/select params={facet=true&start=0&q=*:*&f.publish_month_s.facet.mincount=1&facet.field=publish_month_s&wt=ruby&fq=type:Article&fq=updated_at_d:{*+TO+2013\-04\-19T18\:10\:42Z}&rows=30} hits=4 status=0 QTime=1 
+Apr 19, 2013 7:10:48 PM org.apache.solr.core.SolrCore execute
+INFO: [] webapp=/solr path=/select params={facet=true&start=0&q=*:*&f.publish_month_s.facet.mincount=1&facet.field=publish_month_s&wt=ruby&fq=type:Article&fq=updated_at_d:{*+TO+2013\-04\-19T18\:10\:48Z}&rows=30} hits=4 status=0 QTime=1 
+Apr 19, 2013 7:11:06 PM org.apache.solr.core.SolrCore execute
+INFO: [] webapp=/solr path=/select params={facet=true&start=0&q=*:*&f.publish_month_s.facet.mincount=1&facet.field=publish_month_s&wt=ruby&fq=type:Article&fq=updated_at_d:{*+TO+2013\-04\-19T18\:11\:06Z}&rows=30} hits=4 status=0 QTime=1 
+Apr 19, 2013 7:11:11 PM org.apache.solr.core.SolrCore execute
+INFO: [] webapp=/solr path=/select params={facet=true&start=0&q=*:*&f.publish_month_s.facet.mincount=1&facet.field=publish_month_s&wt=ruby&fq=type:Article&fq=updated_at_d:{*+TO+2013\-04\-19T18\:11\:11Z}&rows=30} hits=4 status=0 QTime=1 
+Apr 19, 2013 7:11:55 PM org.apache.solr.core.SolrCore execute
+INFO: [] webapp=/solr path=/select params={facet=true&start=0&q=*:*&f.publish_month_s.facet.mincount=1&facet.field=publish_month_s&wt=ruby&fq=type:Article&fq=updated_at_d:{*+TO+2013\-04\-19T18\:11\:55Z}&rows=30} hits=4 status=0 QTime=1 
+Apr 19, 2013 7:12:01 PM org.apache.solr.core.SolrCore execute
+INFO: [] webapp=/solr path=/select params={facet=true&start=0&q=*:*&f.publish_month_s.facet.mincount=1&facet.field=publish_month_s&wt=ruby&fq=type:Article&fq=updated_at_d:{*+TO+2013\-04\-19T18\:12\:01Z}&rows=30} hits=4 status=0 QTime=1 
+Apr 19, 2013 7:12:04 PM org.apache.solr.core.SolrCore execute
+INFO: [] webapp=/solr path=/select params={facet=true&start=0&q=*:*&f.publish_month_s.facet.mincount=1&facet.field=publish_month_s&wt=ruby&fq=type:Article&fq=updated_at_d:{*+TO+2013\-04\-19T18\:12\:04Z}&rows=30} hits=4 status=0 QTime=1 
