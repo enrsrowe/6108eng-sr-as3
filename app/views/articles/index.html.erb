@@ -4,67 +4,93 @@
 
 <h1>Articles</h1>
 
-<!-- search function -->
-<%= form_tag articles_path, :method => :get do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag "Search", :name => nil %>
-<% end %>
-<!-- search function -->
+<div class="row">
+  <!-- Main Content -->
+  <div class="span8">
+      <!-- Display all Articles -->
+      <% @articles.each do |article| %>
+        <hr>  
+        <h4><%= article.title %></h4>
+        <p><%= article.body %></p>
 
-<% if logged_in? %>
-  <hr>
-  <!-- New Article button -->
-  <%= link_to raw('<i class="icon-pencil icon-white"></i> New Article'), new_article_path, :class => 'btn btn-success btn-large' %>
-<% end %>
+      <!-- Show Created/Updated -->
+        <span class="label"><b>Created: </b><%= article.created_at.strftime("%d/%m/%Y - %I:%M %p") %></span> 
 
-<!-- Display facets -->
-<div id="facets">
-  <h5>Published</h3>
-    <ul>
-      <% for row in @search.facet(:publish_month).rows %>
-      <li>
-        <% if params[:month].blank? %>
-          <%= link_to row.value, :month => row.value %> (<%= row.count %>)
-        <% else %>
-          <strong><%= row.value %></strong> (<%= link_to "remove", :month => nil %>)
+        <% if article.updated_at != article.created_at %>
+          <span class="label label-success"><b>Updated: </b><%= article.updated_at.strftime("%d/%m/%Y - %I:%M %p") %></span>
         <% end %>
-      </li>
-    <% end %>
-  </ul>
-</div>
- <!-- End facets -->
 
-<!-- Display all Articles -->
-<% @articles.each do |article| %>
-  <hr>  
-  <h4><%= article.title %></h4>
-  <p><%= article.body %></p>
+        <p></p>
 
-<!-- Show Created/Updated -->
-  <span class="label"><b>Created: </b><%= article.created_at.strftime("%d/%m/%Y - %I:%M %p") %></span> 
+        <% if logged_in? %>
+          <!-- Display CRUD buttons -->
+          <div class="btn-group" data-toggle="buttons-checkbox">
+            <%= link_to raw('<i class="icon-eye-open icon-white"></i> Show'), article, :class => 'btn btn-primary' %>
+            <%= link_to raw('<i class="icon-edit icon-white"></i> Edit'), edit_article_path(article), :class => 'btn btn-inverse' %>
+            <%= link_to raw('<i class="icon-trash icon-white"></i> Delete'), article, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %>
+          </div> 
+         <% else %>
+          <%= link_to raw('Read Entire Article »'), article, :class => 'btn btn-small btn-primary' %> 
+        <% end %>        
+      <% end %>
+  </div>
+  <!-- End Main Content -->
 
-  <% if article.updated_at != article.created_at %>
-  	<span class="label label-success"><b>Updated: </b><%= article.updated_at.strftime("%d/%m/%Y - %I:%M %p") %></span>
-  <% end %>
 
-  <p></p>
 
-  <% if logged_in? %>
-    <!-- Display CRUD buttons -->
-    <div class="btn-group" data-toggle="buttons-checkbox">
-      <%= link_to raw('<i class="icon-eye-open icon-white"></i> Show'), article, :class => 'btn btn-primary' %>
-      <%= link_to raw('<i class="icon-edit icon-white"></i> Edit'), edit_article_path(article), :class => 'btn btn-inverse' %>
-      <%= link_to raw('<i class="icon-trash icon-white"></i> Delete'), article, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %>
-    </div> 
-   <% else %>
-    <%= link_to raw('Read Entire Article »'), article, :class => 'btn btn-small btn-primary pull-right' %> 
-  <% end %>
+  <!-- Side Content -->
+  <div class="offset1 span3">
+      <!-- New Article button -->
+      <% if logged_in? %>  
+        <%= link_to raw('<i class="icon-pencil icon-white"></i> New Article'), new_article_path, :name => nil,  :style =>'width:100%;' ,:class => 'btn btn-success btn-large' %>
+        <% else %>
+          <p>Welcome to the Articles section. This is the page for finding out all the latest news and information from the club.</p>        
+      <% end %>
+      <hr>
+
+      <!-- search function -->
+      <%= form_tag articles_path, :method => :get do %>
+          <%= text_field_tag :search, params[:search], :placeholder => 'Search', :class =>'span3' %>
+
+          <%= submit_tag "Search", :name => nil, :style =>'width:100%;', :class => 'btn btn-primary '%>
+
+      <% end %>
+      <!-- search function -->
+      <hr>
+      <!-- Display facets -->
+      <div id="facets">
+        <h4>Published</h4>
+          <ul>
+            <% for row in @search.facet(:publish_month).rows %>
+            <li>
+              <% if params[:month].blank? %>
+                <%= link_to row.value, :month => row.value %> 
+                <span class="badge badge-primary"><%= row.count %></span>
+              <% else %>
+                <strong><%= row.value %></strong> (<%= link_to "remove", :month => nil %>)
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+      <!-- End facets -->
+      <hr>
+      <!-- RSS Feeds -->
+      <h4>RSS Feeds</h4>
+      <ul>
+        <li><%= link_to "XML", articles_url(:rss) %></li>
+        <li><%= link_to "ATOM", articles_url(:atom) %></li>
+        <li></li>
+      </ul>
+      <!-- End RSS Feeds -->
+      <hr>
+  </div>
+  <!-- End side content -->
+
 
   <br>
-  
-<% end %>
+  <br>
 
-<%= link_to "RSS Feed", articles_url(:rss) %>
+
 
 

@@ -8,6 +8,7 @@ class ArticlesController < ApplicationController
       fulltext params[:search]
       with(:updated_at).less_than(Time.zone.now) #Stops future articles being displayed.
       facet(:publish_month)
+      with(:publish_month, params[:month]) if params[:month].present?
     end
     @articles = @search.results.reverse #sunspot display articles
     #end sunspot search
