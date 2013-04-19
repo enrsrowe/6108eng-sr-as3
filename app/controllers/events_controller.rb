@@ -2,7 +2,13 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all.reverse #Allows events to be displayed newest first.
+    @search = Event.search do 
+      fulltext params[:search]
+      with(:updated_at).less_than(Time.zone.now) #Dont show events that havent been published
+    end
+    @events = @search.results.reverse
+    #@events = Event.all.reverse #Allows events to be displayed newest first.
+
 
     respond_to do |format|
       format.html # index.html.erb

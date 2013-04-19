@@ -27,8 +27,7 @@
             <%= link_to raw('<i class="icon-edit icon-white"></i> Edit'), edit_event_path(event), :class => 'btn btn-inverse' %>
             <%= link_to raw('<i class="icon-trash icon-white"></i> Delete'), event, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %>
           </div>
-        <% end %>
-        <br>   
+        <% end %> 
       <% end %>    
   </div>
 
@@ -45,6 +44,12 @@
       <hr>
 
       <!-- search function -->
+      <%= form_tag events_path, :method => :get do %>
+          <%= text_field_tag :search, params[:search], :placeholder => 'Search', :class =>'span3' %>
+
+          <%= submit_tag "Search", :name => nil, :style =>'width:100%;', :class => 'btn btn-primary '%>
+
+      <% end %>
 
       <!-- Display facets -->
 
