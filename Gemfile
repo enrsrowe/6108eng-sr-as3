@@ -5,12 +5,7 @@ gem 'rails', '3.2.12'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-#SQLite3
- gem 'sqlite3'
-
-
-#PostGres
-#gem 'pg'
+gem 'sqlite3'
 
 
 # Gems used only for assets and not required
@@ -53,6 +48,3 @@ gem 'omniauth-facebook'
 #For Weateher
 #gem 'rb_wunderground'
 #gem 'httparty'
-
-
-gem 'pg'
