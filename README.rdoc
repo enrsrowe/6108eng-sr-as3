@@ -2,7 +2,6 @@
 This is a website for the Oval Ski Club. It displays articles and events along with a gallery with the latest photos from the clubs flickr feed.
 
 
-
 == STARTING THE APP:
 
 In order to start the app you may need to run the following commands:
@@ -22,55 +21,55 @@ In order to start the app you may need to run the following commands:
 
 == 1. A working and complete unit test suite for all CRUD models.
 
-  Tests are located in test/unit.
+Tests are located in test/unit.
 
 == 2. A working and compelte functional test suite for all CRUD models.
 
-  Tests are located in test/functional.
+Tests are located in test/functional.
 
 == 3a. ATOM, XML and JSON feed of events.
 
-  All three feeds are available for articles (Main Menu - News) and events (Main Menu - Events).
+All three feeds are available for articles (Main Menu - News) and events (Main Menu - Events).
 
-  ATOM RSS feeds are created using the XML Builder and a custom atom_feed helper method.
-  XML RSS feeds are created using the XML Builder and a custom atom_feed helper method.
-  JSON is rendered using JBUILDER. JBuilder provides a DSL for generating JSON similar to XML. RABL would be a good alternative. The code is similar to XML as can between the files
+ATOM RSS feeds are created using the XML Builder and a custom atom_feed helper method.
+XML RSS feeds are created using the XML Builder and a custom atom_feed helper method.
+JSON is rendered using JBUILDER. JBuilder provides a DSL for generating JSON similar to XML. RABL would be a good alternative. The code is similar to XML as can between the files
 
-  app\*articles or events*\...
-  -index.atom.builder
-  -index.rss.builder
-  -index.json.builder
+app\*articles or events*\...
+  - index.atom.builder
+  - index.rss.builder
+  - index.json.builder
 
 
 == 3b. A user authentication system including registration and login pages.
 
-  Clicking login in the main menu will take the user to a login page. The registration page can only be accessed if there are no users in the system. Using username:test and password:test to login loads the list of authors. Authors can then be edited and new authors can be added. Users can also sign in with facebook by clicking the 'sign in with facebook' button on the login page. If a user is logged into facebook already then login will occur behind the scenes however if they are not then a new tab will ask them for their facebook login details. This was achieved by creating an app on the developers.facebook site.
+Clicking login in the main menu will take the user to a login page. The registration page can only be accessed if there are no users in the system. Using username:test and password:test to login loads the list of authors. Authors can then be edited and new authors can be added. Users can also sign in with facebook by clicking the 'sign in with facebook' button on the login page. If a user is logged into facebook already then login will occur behind the scenes however if they are not then a new tab will ask them for their facebook login details. This was achieved by creating an app on the developers.facebook site.
 
-  When a user is logged in (not facebook) the 'whats on' and 'news' pages found via the main menu will be displayed different. Buttons will appear in order to create, edit and delete articles. Anyone can read an article. 
+When a user is logged in (not facebook) the 'whats on' and 'news' pages found via the main menu will be displayed different. Buttons will appear in order to create, edit and delete articles. Anyone can read an article. 
 
 == 3c. A way of displaying photographs by either file upload of flickr gallery integration.
 
-  Images can be attached to a article and uploaded. These will appear in the full page of the article. The gallery page accessed via the main menu includes a flickr carousel which pulls in photos from the flicr photostream (http://www.flickr.com/photos/95136582@N04/). The second row of images are some images that have been specially chosen as star images. When clicked they will open a large copy using lightbox.js. Using gems such as rflickr, flickr-fu, flickraw and many others was not possible as they were developed for earlier versions of rails and crashed the rails console.
+Images can be attached to a article and uploaded. These will appear in the full page of the article. The gallery page accessed via the main menu includes a flickr carousel which pulls in photos from the flicr photostream (http://www.flickr.com/photos/95136582@N04/). The second row of images are some images that have been specially chosen as star images. When clicked they will open a large copy using lightbox.js. Using gems such as rflickr, flickr-fu, flickraw and many others was not possible as they were developed for earlier versions of rails and crashed the rails console.
 
 == 3d. Search Functionality for articles and events pages.
 
-  Articles and events can be searched using the search bar on the right side of the screen of the 'News' and 'Whats on pages'. The search uses the sunspot gem will search through article titles, body, date published and its comments. Facets are used to create a small sub menu on the right of articles published each month. 
+Articles and events can be searched using the search bar on the right side of the screen of the 'News' and 'Whats on pages'. The search uses the sunspot gem will search through article titles, body, date published and its comments. Facets are used to create a small sub menu on the right of articles published each month. 
 
 == 3e. Weather reports for club holiday.
 
-  Weather reports are received from weather.com in order to display both the region of the club holiday and the Wirral based ski slope weather reports on the homepage of the site. ZWeatherFeed is the plugin used to do this. Weather reports were further styled to include a link to the full report on teh weather.com site. 
+Weather reports are received from weather.com in order to display both the region of the club holiday and the Wirral based ski slope weather reports on the homepage of the site. ZWeatherFeed is the plugin used to do this. Weather reports were further styled to include a link to the full report on teh weather.com site. 
 
 == 3f. AJAX web enhancement
 
-  AJAX is used throughout the site in order to improve the user experience. Every page has a 'ToTop' function which displays a arrow to the top of the page when a user scrolls down. This makes save shte user scrolling to the top of the page. This encorporates smooth scroll for a clean scroll.
+AJAX is used throughout the site in order to improve the user experience. Every page has a 'ToTop' function which displays a arrow to the top of the page when a user scrolls down. This makes save shte user scrolling to the top of the page. This encorporates smooth scroll for a clean scroll.
 
-  On the about us page an accordion is used to display the members of the committee and the club instructors. This is a good way of displaying data as only one section can be open at a time which makes things easier to find and navigate. Vertical screen space is saved so the user doesnt have to scroll as far.
+On the about us page an accordion is used to display the members of the committee and the club instructors. This is a good way of displaying data as only one section can be open at a time which makes things easier to find and navigate. Vertical screen space is saved so the user doesnt have to scroll as far.
 
-  The gallery page uses lightbox.js in order to show full size images when the thumbnail is clicked. This also allows for sets of images that can be navigated when in large view. This effect is only applied to the star images on the gallery page however i can easily be applied to any other images.
+The gallery page uses lightbox.js in order to show full size images when the thumbnail is clicked. This also allows for sets of images that can be navigated when in large view. This effect is only applied to the star images on the gallery page however i can easily be applied to any other images.
 
-  On the 'join us' page there are three types of membership and two types of methods for paying for sessions. Each one of these options has a few bullet points with brief desciptions. However when hovered over the container expands to reveal a more detailed deiscription of the option. A blue shadow appears around the container to show which is selected. 
+On the 'join us' page there are three types of membership and two types of methods for paying for sessions. Each one of these options has a few bullet points with brief desciptions. However when hovered over the container expands to reveal a more detailed deiscription of the option. A blue shadow appears around the container to show which is selected. 
 
-  A good future improvement could be that for articles and events pages only ten articles were displayed at any one time. Extra articles could be displayed by clicking a 'more articles' button or by having pagination. This would be fairly easy to implement.
+A good future improvement could be that for articles and events pages only ten articles were displayed at any one time. Extra articles could be displayed by clicking a 'more articles' button or by having pagination. This would be fairly easy to implement.
 
 
 == More about the App
