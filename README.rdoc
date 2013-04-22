@@ -79,12 +79,7 @@ Since the second assignment the way that articles and events are displayed has b
 If no author is present when the app is started then the registration page will be shown on login. If no authors are present then creating one should be the first thing you do.
 
 
-
-===========================================================================================================
-
-
-
-== ReadMe From Assignment 2
+= ReadMe From Assignment 2
 
 There are three controllers (Welcome, Articles, Events). The welcome controller contains all of the static pages and also displays the articles on the index.html page and events on the whatson.html page. An article/event can be clicked on in order to view the entire article on its own page. This is done via the show page in the article/events controller. From the show article page there are two buttons which either links back to the home/events page OR to the articles/events controllers.
 
