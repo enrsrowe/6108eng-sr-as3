@@ -179,7 +179,9 @@
 					html += '<div class="weatherError">City not found</div>';
 				}
 
-				html += '</div>';
+				html += '</div><hr>';
+
+
 
 				// Alternate row classes
 				if (row == 'odd') { row = 'even'; } else { row = 'odd';	}
@@ -196,7 +198,10 @@
 				return r;
 			};
 
+
 		});
 	};
+
+
 
 })(jQuery);
