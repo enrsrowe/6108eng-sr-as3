@@ -23,9 +23,9 @@
         <% if logged_in? %>
         <!-- Display CRUD buttons -->
           <div class="btn-group" data-toggle="buttons-checkbox">
-            <%= link_to raw('<i class="icon-eye-open icon-white"></i> Show'), event, :class => 'btn btn-primary' %>
-            <%= link_to raw('<i class="icon-edit icon-white"></i> Edit'), edit_event_path(event), :class => 'btn btn-inverse' %>
-            <%= link_to raw('<i class="icon-trash icon-white"></i> Delete'), event, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %>
+            <%= link_to raw('<i class="icon-eye-open icon-white"></i> Show'), event, :class => 'btn btn-primary btn-small' %>
+            <%= link_to raw('<i class="icon-edit icon-white"></i> Edit'), edit_event_path(event), :class => 'btn btn-inverse btn-small' %>
+            <%= link_to raw('<i class="icon-trash icon-white"></i> Delete'), event, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger btn-small' %>
           </div>
         <% end %> 
       <% end %>    
@@ -57,9 +57,9 @@
       <!-- RSS Feeds -->
       <h4>RSS Feeds</h4>
       <ul>
-        <li>XML</li>
-        <li>ATOM</li>
-        <li>JSON</li>
+        <li><%= link_to "XML", events_url(:rss) %></li>
+        <li><%= link_to "ATOM", events_url(:atom) %></li>
+        <li><%= link_to "JSON", events_url(:json) %></li>
       </ul>
       <hr>
   </div>

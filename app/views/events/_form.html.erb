@@ -13,11 +13,11 @@
 
   <div class="field"  >
     <%= f.label :title %><br />
-    <%= f.text_field :title, :class => 'span9' %> <!-- Uncommented textarea in scaffold.css as it forced 206px wide -->
+    <%= f.text_field :title, :class => 'span9' ,:style => "margin-top:-20px;" %> <!-- Uncommented textarea in scaffold.css as it forced 206px wide -->
   </div>
   <div class="field">
     <%= f.label :body %><br />
-    <%= f.text_area :body, :class => 'span12' %>
+    <%= f.text_area :body, :class => 'span12',:style => "margin-top:-20px;"  %>
   </div>
   <div class="field">
     <%= f.label  :date %><p>e.g. 01/02/2014</p>

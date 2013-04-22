@@ -8,8 +8,11 @@
 
 <!--Display Article -->
 <h2><%= @article.title %></h2>
-<p>Tags: <%= tag_links(@article.tags) %></p> <!-- calls helper method -->
 <p><%= @article.body %></p>
+
+	<span class="label">Tags: <%= tag_links(@article.tags) %></span> <!-- calls helper method -->
+	<br>
+
 
 <!-- Display the image -->
 <% if @article.image.exists? %>
@@ -22,12 +25,15 @@
 	<span class="label label-success"><b>Updated: </b><%= @article.updated_at.strftime("%d/%m/%Y - %I:%M %p") %></span>
 <% end %>
 
-<!-- Make a comment -->
-<%= render partial: 'comments/form' %>
+<div class="Box">
+	<!-- Make a comment -->
+	<%= render partial: 'comments/form' %>
+</div>
 
-<!-- Show Comments -->
-<h3>Comments (<%= @article.comments.size %>)</h3>
-<%= render partial: 'comment', collection: @article.comments %>
+	<!-- Show Comments -->
+	<h4>Comments (<%= @article.comments.size %>)</h4>
+	<%= render partial: 'comment', collection: @article.comments %> <!-- .reverse new comments go to the top? -->
+
 
 <!-- Buttons -->
 <br><br>

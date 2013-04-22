@@ -1,5 +1,5 @@
 atom_feed do |feed|
-  feed.title("The Bloggr Super-Duper News Feed")
+  feed.title("Oval Ski Club - Articles")
   feed.updated(@articles.first.created_at)
   @articles.each do |article|
     feed.entry(article) do |entry|

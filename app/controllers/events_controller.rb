@@ -9,11 +9,11 @@ class EventsController < ApplicationController
     @events = @search.results.reverse
     #@events = Event.all.reverse #Allows events to be displayed newest first.
 
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @events }
-    end
+    #Not Needed for JBuilder
+    #respond_to do |format|
+    #  format.html # index.html.erb
+    #  format.json { render json: @events }
+    #end
   end
 
   # GET /events/1
@@ -21,10 +21,12 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @event }
-    end
+
+    #Not needed for JBuilder
+    #respond_to do |format|
+    #  format.html # show.html.erb
+    #  format.json { render json: @event }
+    #end
   end
 
   # GET /events/new

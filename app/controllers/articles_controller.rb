@@ -13,7 +13,6 @@ class ArticlesController < ApplicationController
     @articles = @search.results.reverse #sunspot display articles
     #end sunspot search
 
-    
     #@articles = Article.all.reverse #Allows articles to be displayed newest first.
   end
 
@@ -26,10 +25,12 @@ class ArticlesController < ApplicationController
     @comment = Comment.new
     @comment.article_id = @article.id
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @article }
-    end
+
+#not needed when using jbuilder
+    #respond_to do |format|
+    #  format.html # show.html.erb
+    #  format.json { render json: @article }
+    #end
   end
 
   # GET /articles/new

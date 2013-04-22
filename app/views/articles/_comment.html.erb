@@ -1,5 +1,13 @@
-<div class="comment">
-	<h4>Comment by <%= comment.author_name %></h4>
-	<p><%= comment.body %></p>
-	<p>Posted <%= distance_of_time_in_words(comment.article.created_at, comment.created_at) %> ago</p>
-</div>
+
+	<div class="row">
+		<div class="span1">
+			<img src="../../assets/user.png" alt="User Image" style="height:60px; width:60px; margin-top:20px;">
+			<span class="label" style="margin-left:-10px; text-align:center">
+				<%= comment.author_name %></span>
+		</div>
+		<div class="span10 bubble">
+			<p><%= comment.body %></p>
+			
+			<span class="label label-success "> <!--text here --> <%= distance_of_time_in_words(comment.article.created_at, comment.created_at) %> ago</span>
+		</div>
+	</div>

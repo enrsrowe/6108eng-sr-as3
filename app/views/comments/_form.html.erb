@@ -1,4 +1,4 @@
-<h3>Post a Comment</h3>
+<h5>Leave a Comment</h5>
 
 <!-- <p>Comment form will go here...</p> -->
 
@@ -7,14 +7,14 @@
 	<p>
 		<%= f.label :author_name, "Your Name" %>
 		<br/>
-		<%= f.text_field :author_name %>
+		<%= f.text_field :author_name , :class => 'span5', :style => "margin-top:-20px;"%>
 	</p>
 	<p>
-		<%= f.label :body %>
+		<%= f.label :body, "Your Comment" %>
 		<br/>
-		<%= f.text_area :body %>
+		<%= f.text_area :body , :class => 'span11', :rows => "5", :style => "margin-top:-20px;" %>
 	</p>
 	<p>
-		<%= f.submit 'Submit' %>
+		<%= f.submit 'Submit', :class => 'btn btn-success'%>
 	</p>
 <% end %>
