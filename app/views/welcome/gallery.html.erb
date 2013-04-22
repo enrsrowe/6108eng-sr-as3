@@ -1,13 +1,32 @@
+  <script>
+
+    // Load the classic theme
+    Galleria.loadTheme('../assets/galleria.classic.js');
+
+    // Initialize Galleria
+    Galleria.run('#galleria', {
+
+      flickr: 'user:95136582@N04',
+      flickrOptions: {sort: 'date-posted-asc'    }
+
+        // search flickr for "galleria"
+        //flickr: 'search:ski',
+        //
+        //flickrOptions: {
+            // sort by interestingness
+        //    sort: 'interestingness-desc'
+        //}
+    });
+    </script>
+        <script src="../assets/javascripts/lightbox.js"></script>
+
+
       <!-- Main Text -->
       <div class="row">
         <div class="span12">
           <h2>Gallery</h2>
-
-
-
-
-          
-
+          <h5> <i class="icon-film"></i> Club Holiday 2012</h5>
+          <div id="galleria" style="height:350px;"></div>
       
       <!-- Start Gallery -->
          <h5> <i class="icon-star-empty"></i> Star Photos</h5>
@@ -15,19 +34,25 @@
           <ul class="thumbnails">
             <li class="span4">
               <div class="thumbnail">
-                <img src="../assets/carousel1.jpg" alt="Jenny location scouting">
+
+                <a href="../assets/carousel1.jpg" rel="lightbox" title="Jenny location scouting"><img src="../assets/carousel1.jpg" alt="Jenny location scouting"></a>
+
                 <p>Jenny out scouting for a location for the OSC 2012 club holiday. Bring on St.Christoph/St.Anton 2013!</p>
               </div>
             </li>            
             <li class="span4">
               <div class="thumbnail">
-                <img src="../assets/carousel2.jpg" alt="John Carves">
+
+                <a href="../assets/carousel2.jpg" rel="lightbox" title="John Carving"><img src="../assets/carousel2.jpg" alt="John Carving"></a>
+
                 <p>Club President John Croft attacks the slopes along with his new GoPro camera. Needless to say there is some good footage here.</p>
               </div>
             </li>
             <li class="span4">
               <div class="thumbnail">
-                <img src="../assets/carousel3.jpg" alt="Nick Jumping">
+
+                <a href="../assets/carousel3.jpg" rel="lightbox" title="Nick Jumping"><img src="../assets/carousel3.jpg" alt="Nick Jumping"></a>
+
                 <p>Nick Spearpoint doing his thing with some new freestyle skis from one of our sponsors. Discounts for all club members!</p>
               </div>
             </li>
